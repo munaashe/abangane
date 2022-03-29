@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/abangane/static/css/main.bdce4fcf.css",
+    "main.js": "/abangane/static/js/main.5bc86666.js",
+    "static/media/2.jpg": "/abangane/static/media/2.b456edeca674e24c1ea3.jpg",
+    "static/media/1.jpg": "/abangane/static/media/1.f2c2e3a6bc557db8e9b7.jpg",
+    "static/media/3.jpg": "/abangane/static/media/3.21b1a7d2e6db0e8ba22e.jpg",
+    "static/media/background.jpg": "/abangane/static/media/background.031ab6aee7d987f4aed4.jpg",
+    "static/media/src.png": "/abangane/static/media/src.ed81c37cdc31736eeb70.png",
+    "static/media/smhzw.jpg": "/abangane/static/media/smhzw.708602b1e5787855a55e.jpg",
+    "static/media/michelle.jpg": "/abangane/static/media/michelle.ac4819053efe11ea7244.jpg",
+    "static/media/zibusiso.jpg": "/abangane/static/media/zibusiso.142a4b1b6131af0535cb.jpg",
+    "static/media/life.jpg": "/abangane/static/media/life.5ba1bcda859991bd9131.jpg",
+    "static/media/allan.jpg": "/abangane/static/media/allan.54086bc357682e15299d.jpg",
+    "static/media/ocdtrust.jpg": "/abangane/static/media/ocdtrust.86240012d7496b3df1d0.jpg",
+    "static/media/logo.png": "/abangane/static/media/logo.2b83c84afc10ccd50fa9.png",
+    "static/media/kumbirai.jpg": "/abangane/static/media/kumbirai.a4dc88f9652804a80180.jpg",
+    "static/media/boldDialogue.jpg": "/abangane/static/media/boldDialogue.619580e8505b476ade85.jpg",
+    "static/media/saywhat.png": "/abangane/static/media/saywhat.8bf8b43ece8373906e5b.png",
+    "static/media/dignityAfrica.jpg": "/abangane/static/media/dignityAfrica.f00f013a5ab55ab46949.jpg",
+    "static/media/contact.jpg": "/abangane/static/media/contact.99019d96c9578bbe7cdd.jpg",
+    "static/media/friendship.jpg": "/abangane/static/media/friendship.c2f5c0e54c5e5e65a7fd.jpg",
+    "index.html": "/abangane/index.html",
+    "main.bdce4fcf.css.map": "/abangane/static/css/main.bdce4fcf.css.map",
+    "main.5bc86666.js.map": "/abangane/static/js/main.5bc86666.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bdce4fcf.css",
+    "static/js/main.5bc86666.js"
+  ]
+}
