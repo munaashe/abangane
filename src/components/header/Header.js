@@ -17,7 +17,7 @@ function Header() {
       <nav className='navbar'>
         <div className='navbar-container'>
           <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-            <img src={logo} alt='SkyAngel' height='65px'/>
+            <img src={logo} alt='SkyAngel' height='65px' />
           </Link>
           <div className='menu-icon' onClick={handleClick}>
             <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
@@ -26,6 +26,15 @@ function Header() {
             <li className='nav-item'>
               <Link to='/' className='nav-links' onClick={closeMobileMenu}>
                 Home
+              </Link>
+            </li>
+            <li className='nav-item'>
+              <Link
+                to='/blog'
+                className='nav-links'
+                onClick={closeMobileMenu}
+              >
+                Blog
               </Link>
             </li>
             <li className='nav-item'>
@@ -44,15 +53,6 @@ function Header() {
                 onClick={closeMobileMenu}
               >
                 Trustees
-              </Link>
-            </li>
-            <li className='nav-item'>
-              <Link
-                to='/contact'
-                className='nav-links'
-                onClick={closeMobileMenu}
-              >
-                Contact Us
               </Link>
             </li>
           </ul>

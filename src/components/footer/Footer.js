@@ -6,17 +6,17 @@ function Footer() {
   return (
     <div className='footer-container'>
       <section className='footer-subscription'>
-        <Typography variant='h4' align='center' style={{color: '#fff'}}>
-          Abangane Platforms
+        <Typography variant='h5' align='center' style={{ color: '#fff', fontWeight: 'bold' }}>
+          Abangane Platform
         </Typography>
-        <Typography variant='subtitle1' align='center'  style={{color: '#fff'}} component='p' >
+        <Typography variant='subtitle1' align='center' style={{ color: '#fff' }} >
           {'All Rights Reserved ©'}  {new Date().getFullYear()}
         </Typography>
-        <Typography variant='subtitle1' align='center'  style={{color: '#fff'}} component='p' >
-          SiDesigned™
+        <Typography variant='subtitle1' align='center' style={{ color: '#fff' }} >
+          <a style={{ color: '#fff' }} target='_blank' rel='noreferrer' href='https://munashe.co.zw'>SiDesigned</a>
         </Typography>
       </section>
-     
+
     </div>
   );
 }
