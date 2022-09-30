@@ -3,7 +3,7 @@ import { Work, TravelExplore, Instagram, FacebookOutlined, Twitter } from '@mui/
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import Logo from '../../assets/logo.png';
+import Logo from '../../assets/logo1.png';
 
 const Contact = () => {
     const [loader, setLoader] = useState(false);
@@ -81,12 +81,15 @@ const Contact = () => {
                     </form>
                 </Grid>
                 <Grid item lg={4} md={4} sm={12} xs={12}>
-                    <Link to='/'>
-                        <img
-                            src={Logo}
-                            width='170px'
-                            alt='logo'
-                        />
+                    <Link to='/' >
+                            <img
+                                src={Logo}
+                                width='170px'
+                                alt='logo'
+                                style={{
+                                    justifyContent: 'center'
+                                }}
+                            />
                     </Link>
                     <Typography variant='subtitle1' sx={{ color: '#551b10', fontStyle: 'italic', textAlign: 'center', marginBottom: '15px' }}>
                         Connect With Us
@@ -134,7 +137,7 @@ const Contact = () => {
                                             color: '#551b10',
                                             fontSize: '50px',
                                             ':hover': {
-                                                color: '#FF0000',
+                                                color: '#c1558b',
                                                 fontSize: '60px'
                                             }
                                         }}

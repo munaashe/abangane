@@ -3,11 +3,11 @@ import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import { CardContent, CardMedia, Typography, Container, Grid } from '@mui/material';
 
-import background from '../assets/background.jpg';
-import allan from '../assets/trustees/allan.jpg';
-import kumbirai from '../assets/trustees/kumbirai.jpg';
-import michelle from '../assets/trustees/michelle.jpg';
-import zibusiso from '../assets/trustees/zibusiso.jpg';
+import background from '../../assets/background.jpg';
+import allan from '../../assets/trustees/allan.jpg';
+import kumbirai from '../../assets/trustees/kumbirai.jpg';
+import michelle from '../../assets/trustees/michelle.jpg';
+import zibusiso from '../../assets/trustees/zibusiso.jpg';
 
 
 export default function Trustees() {
@@ -126,9 +126,3 @@ export default function Trustees() {
     </div>
   );
 }
-
-
-
-
-
-

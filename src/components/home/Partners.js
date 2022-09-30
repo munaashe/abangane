@@ -1,5 +1,5 @@
-import React from "react";
-import { Container,  Typography } from "@mui/material";
+import React, { useState } from "react";
+import { Container, Typography } from "@mui/material";
 import Slider from "react-slick";
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 
@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 
-import smhzw from '../../assets/partners/smhzw.PNG';
+import smhzw from '../../assets/partners/smhzw.png';
 import boldDialogue from '../../assets/partners/boldDialogue.png';
 import contact from '../../assets/partners/contact.png';
 import dignityAfrica from '../../assets/partners/dignityAfrica.png';
@@ -18,6 +18,7 @@ import saywhat from '../../assets/partners/saywhat.png';
 import srczim from '../../assets/partners/src.png';
 
 function SampleNextArrow(props) {
+  const [sliderRef, setSliderRef] = useState(null);
   const { className, onClick } = props;
   return (
     <div className={className} onClick={onClick}>
@@ -38,13 +39,16 @@ function SamplePrevArrow(props) {
 const SwipeSlider = () => {
 
   const settings = {
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
+    dots: false,
     infinite: true,
-    slidesToShow: 3,
-    lazyLoad: true,
-    dots: true,
-    swipeToSlide: true,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    autoplay: true,
+    prevArrow: <SamplePrevArrow />,
+    nextArrow: <SampleNextArrow />,
+    speed: 1000,
+    autoplaySpeed: 2000,
+    cssEase: 'linear',
     responsive: [
       {
         breakpoint: 1024,
@@ -52,31 +56,27 @@ const SwipeSlider = () => {
           slidesToShow: 3,
           slidesToScroll: 3,
           infinite: true,
-          dots: true
-        }
+          dots: false,
+        },
       },
       {
         breakpoint: 600,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-          initialSlide: 2
-        }
+          initialSlide: 2,
+        },
       },
       {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
+          slidesToScroll: 1,
+        },
+      },
     ],
-    afterChange: function (index) {
-      console.log(
-        `Slider Changed to: ${index + 1}, background: #222; color: #bada55`
-      );
-    }
   };
+
 
 
 
@@ -115,7 +115,7 @@ const SwipeSlider = () => {
     <div className="container">
       <Container maxWidth='lg' sx={{ padding: '20px' }}>
         <Typography variant='h4' align='center' sx={{ color: '#551b10', fontWeight: 'bold' }}>
-          Out partners
+          Our partners
         </Typography>
         <Container maxWidth='sm' sx={{ paddingBottom: '20px' }}>
           <Typography variant='subtitle1' align='center' sx={{ color: '#333' }}>

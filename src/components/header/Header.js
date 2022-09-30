@@ -17,7 +17,7 @@ function Header() {
       <nav className='navbar'>
         <div className='navbar-container'>
           <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-            <img src={logo} alt='SkyAngel' height='65px' />
+            <img src={logo} style={{alignItems: 'center'}} alt='SkyAngel' height='55px' />
           </Link>
           <div className='menu-icon' onClick={handleClick}>
             <i className={click ? 'fas fa-times' : 'fas fa-bars'} />

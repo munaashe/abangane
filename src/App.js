@@ -1,27 +1,106 @@
-import './App.css';
-import { Routes, Route } from 'react-router-dom';
+import * as React from 'react';
+import { useRoutes } from 'react-router-dom';
 
 
-import Footer from './components//footer/Footer';
-import Header from './components/header/Header';
-import Home from './pages/Home';
-import Trustees from './pages/Trustees';
-import Blog from './pages/Blog';
-import About from './pages/About';
+//code splitting
+const Loader = (Component) => (props) =>
+(
+  <React.Suspense fallback={<div>Loading ...</div>} >
+    <Component {...props} />
+  </React.Suspense>
+);
+
+//Layouts
+const GeneralLayout = Loader(React.lazy(() => import('../src/layouts/GeneralLayout')));
+const AdminLayout = Loader(React.lazy(() => import('../src/layouts/AdminLayout')));
+
+//Public Pages
+const Home = Loader(React.lazy(() => import('../src/pages/home')));
+const About = Loader(React.lazy(() => import('../src/pages/about')));
+const Blog = Loader(React.lazy(() => import('../src/pages/blog')));
+const Trustees = Loader(React.lazy(() => import('../src/pages/trustees')));
+const Article = Loader(React.lazy(() => import('../src/pages/article')));
+
+//Admin Pages
+const BlogArticles = Loader(React.lazy(() => import('../src/admin/blog')));
+const Gallery = Loader(React.lazy(() => import('../src/admin/gallery')));
+const AddArticle = Loader(React.lazy(() => import('../src/admin/add/AddArticle')));
+const AddPicture = Loader(React.lazy(() => import('../src/admin/add/AddPicture')));
+
+//Login Page
+const Login = Loader(React.lazy(() => import('../src/admin/login')));
+
+//Error Page
+const Error = Loader(React.lazy(() => import('../src/pages/error')));
+
+
 
 function App() {
-  return (
-    <div className="App">
-      <Header/>
-      <Routes>
-        <Route path='/' exact element={<Home/>} />
-        <Route path='/about' exact element={<About/>} />
-        <Route path='/trustees' exact element={<Trustees/>} />
-        <Route path='/blog' exact element={<Blog/>} />
-      </Routes>
-      <Footer/>
-    </div>
-  );
+  let element = useRoutes([
+    {
+      path: '/',
+      element: <GeneralLayout />,
+      children: [
+        {
+          path: '',
+          element: <Home />,
+        },
+        {
+          path: 'about',
+          element: <About />
+        },
+        {
+          path: 'blog',
+          element: <Blog />,
+          children: (
+            {
+              path: ':id',
+              element: <Article/>
+            }
+          )
+        },
+        {
+          path: 'trustees',
+          element: <Trustees />
+        },
+      ]
+    },
+    {
+      path: 'umngane',
+      element: <AdminLayout />,
+      children: [
+        {
+          path: '',
+          element: <BlogArticles />
+        },
+        {
+          path: 'blog-articles',
+          element: <BlogArticles />
+        },
+        {
+          path: 'gallery',
+          element: <Gallery />
+        },
+        {
+          path: 'add-article',
+          element: <AddArticle />
+        },
+        {
+          path: 'add-picture',
+          element: <AddPicture />
+        }
+      ]
+    },
+    {
+      path: 'umongameli',
+      element: <Login />
+    },
+    {
+      path: '*',
+      element: <Error />
+    }
+  ])
+  return element;
 }
 
 export default App;

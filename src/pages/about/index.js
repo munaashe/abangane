@@ -2,9 +2,9 @@ import React from 'react';
 import { Parallax } from 'react-parallax';
 import { Typography, Container, Grid, Card, CardMedia } from '@mui/material';
 
-import about1 from '../assets/about/1.jpg';
-import about2 from '../assets/about/2.jpg';
-import about3 from '../assets/about/3.jpg';
+import about1 from '../../assets/about/1.jpg';
+import about2 from '../../assets/about/2.jpg';
+import about3 from '../../assets/about/3.jpg';
 
 function About() {
   return (
