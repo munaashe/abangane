@@ -12,7 +12,7 @@ import {
     onSnapshot,
     deleteDoc,
     doc
-} from "firebase/firestore";
+} from 'firebase/firestore';
 
 import { db } from '../../config/firebaseConfig';
 
@@ -20,7 +20,7 @@ const Pictures = () => {
     const [Pictures, setPictures] = useState([]);
 
     useEffect(() => {
-        const q = query(collection(db, "Pictures"));
+        const q = query(collection(db, 'Pictures'));
         const unsub = onSnapshot(q, (querySnapshot) => {
             let PicturesArray = [];
             querySnapshot.forEach((doc) => {
@@ -32,7 +32,7 @@ const Pictures = () => {
     }, []);
 
     const handleDelete = async (id) => {
-        await deleteDoc(doc(db, "Pictures", id));
+        await deleteDoc(doc(db, 'Pictures', id));
     };
 
     return (
@@ -44,20 +44,20 @@ const Pictures = () => {
                             <Card sx={{ display: 'flex' }}>
                                 <Box sx={{ display: 'flex', flexDirection: 'row' }}>
                                     <CardMedia
-                                        component="img"
-                                        sx={{ height: '400px', minWidth: '350px' }}
+                                        component='img'
+                                        sx={{ height: '300px', width: '450px' }}
                                         image={Picture.imageUrl}
                                         alt={Picture.abstract}
                                     />
                                 </Box>
                                 <Box >
-                                    <CardContent sx={{ flex: '1 0 auto' }}>
-                                        <Typography variant="subtitle1" color="text.secondary" component="div">
+                                    <CardContent sx={{ flex: '1 0 auto', paddingLeft: '30px' }}>
+                                        <Typography variant='subtitle1' color='text.secondary' component='div' align='center'>
                                             {Picture.abstract}
                                         </Typography>
                                     </CardContent>
                                     <br />
-                                    <Box >
+                                    <Box textAlign='center'>
                                         <Button
                                             variant='outlined'
                                             style={{

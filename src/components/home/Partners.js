@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Container, Typography } from "@mui/material";
+import React from "react";
+import { Container, Typography, Card, CardMedia } from "@mui/material";
 import Slider from "react-slick";
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 
@@ -18,7 +18,6 @@ import saywhat from '../../assets/partners/saywhat.png';
 import srczim from '../../assets/partners/src.png';
 
 function SampleNextArrow(props) {
-  const [sliderRef, setSliderRef] = useState(null);
   const { className, onClick } = props;
   return (
     <div className={className} onClick={onClick}>
@@ -28,7 +27,7 @@ function SampleNextArrow(props) {
 }
 
 function SamplePrevArrow(props) {
-  const { className, style, onClick } = props;
+  const { className, onClick } = props;
   return (
     <div className={className} onClick={onClick}>
       <ArrowBackIos style={{ color: '#551b10', fontSize: '30px', marginLeft: '-20px' }} />
@@ -36,18 +35,18 @@ function SamplePrevArrow(props) {
   );
 }
 
-const SwipeSlider = () => {
+const Partners = () => {
 
   const settings = {
     dots: false,
     infinite: true,
-    slidesToShow: 4,
+    slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
     prevArrow: <SamplePrevArrow />,
     nextArrow: <SampleNextArrow />,
     speed: 1000,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 3000,
     cssEase: 'linear',
     responsive: [
       {
@@ -115,7 +114,7 @@ const SwipeSlider = () => {
     <div className="container">
       <Container maxWidth='lg' sx={{ padding: '20px' }}>
         <Typography variant='h4' align='center' sx={{ color: '#551b10', fontWeight: 'bold' }}>
-          Our partners
+          Our Partners
         </Typography>
         <Container maxWidth='sm' sx={{ paddingBottom: '20px' }}>
           <Typography variant='subtitle1' align='center' sx={{ color: '#333' }}>
@@ -124,23 +123,27 @@ const SwipeSlider = () => {
             organisations we have partnered with include:
           </Typography>
         </Container >
-        <div className="col-md-8">
+        <Container maxWidth='lg' sx={{ paddingTop: '20px', paddingBottom: '20px' }}>
           <Slider {...settings}>
             {data.map((slide, i) => {
               return (
                 <div>
-                  <img
-                    className="d-block w-100"
-                    src={slide.image}
-                    alt={slide.caption}
-                  />
+                  <Card sx={{ height: '230px', display: 'flex', backgroundColor: 'transparent', border: 'none', boxShadow: 'none' }}>
+                    <CardMedia
+                      sx={{ objectFit: 'contain' }}
+                      height='230px'
+                      component='img'
+                      image={slide.image}
+                      alt={slide.caption}
+                    />
+                  </Card>
                 </div>
               )
             })}
           </Slider>
-        </div>
+        </Container>
       </Container>
     </div >
   )
 }
-export default SwipeSlider;
+export default Partners;

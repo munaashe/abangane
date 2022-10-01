@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { useRoutes } from 'react-router-dom';
 
+//Admin Route
+import PrivateRoute from './routes/PrivateRoute';
 
 //code splitting
 const Loader = (Component) => (props) =>
@@ -52,12 +54,10 @@ function App() {
         {
           path: 'blog',
           element: <Blog />,
-          children: (
-            {
-              path: ':id',
-              element: <Article/>
-            }
-          )
+        },
+        {
+          path: 'blog/:id',
+          element: <Article />
         },
         {
           path: 'trustees',
@@ -67,7 +67,7 @@ function App() {
     },
     {
       path: 'umngane',
-      element: <AdminLayout />,
+      element: <PrivateRoute><AdminLayout /></PrivateRoute>,
       children: [
         {
           path: '',

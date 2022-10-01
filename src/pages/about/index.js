@@ -5,6 +5,8 @@ import { Typography, Container, Grid, Card, CardMedia } from '@mui/material';
 import about1 from '../../assets/about/1.jpg';
 import about2 from '../../assets/about/2.jpg';
 import about3 from '../../assets/about/3.jpg';
+import about4 from '../../assets/about/4.jpg';
+import about5 from '../../assets/about/5.jpg';
 
 function About() {
   return (
@@ -66,7 +68,7 @@ function About() {
             <Card height='150px' sx={{ backgroundColor: 'transparent', boxShadow: 'none', paddingRight: '30px' }}>
               <CardMedia
                 component='image'
-                image={about1}
+                image={about4}
                 sx={{
                   objectFit: 'contain',
                   height: '150px',
@@ -82,7 +84,7 @@ function About() {
             <Card height='150px' sx={{ backgroundColor: 'transparent', boxShadow: 'none', paddingRight: '30px' }}>
               <CardMedia
                 component='image'
-                image={about1}
+                image={about5}
                 sx={{
                   objectFit: 'contain',
                   height: '150px',

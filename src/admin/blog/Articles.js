@@ -38,19 +38,19 @@ const Articles = () => {
     return (
         <div>
             <Container maxWidth='lg' style={{ marginTop: '20px', marginBottom: '20px' }}>
-                <Grid container spacing={3} alignItems='center'>
+                <Grid container spacing={3} alignItems='center' >
                     {Articles.map((Article) => (
                         <Grid item lg={12} >
                             <Card sx={{ display: 'flex' }}>
                                 <Box sx={{ display: 'flex', flexDirection: 'row' }}>
                                     <CardMedia
                                         component="img"
-                                        sx={{ height: '400px', minWidth: '350px' }}
+                                        sx={{ height: '350px', width: '450px' }}
                                         image={Article.imageUrl}
                                         alt={Article.title}
                                     />
                                 </Box>
-                                <Box >
+                                <Box sx={{paddingLeft: '30px'}}>
                                     <CardContent sx={{ flex: '1 0 auto' }}>
                                         <Typography component="div" variant="h5">
                                             {Article.title}
@@ -58,9 +58,12 @@ const Articles = () => {
                                         <Typography variant="subtitle1" color="text.secondary" component="div">
                                             {Article.abstract}
                                         </Typography>
+                                        <Typography variant="subtitle1" color="text.secondary" component="div">
+                                          By:  {Article.author}
+                                        </Typography>
                                     </CardContent>
                                     <br />
-                                    <Box >
+                                    <Box textAlign='center'>
                                         <Button
                                             variant='outlined'
                                             style={{

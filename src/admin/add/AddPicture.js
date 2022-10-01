@@ -1,4 +1,4 @@
-import { Container, Grid, Typography, TextField, Box, MenuItem, Button } from '@mui/material';
+import { Container, Grid, Typography, TextField, Box, Button } from '@mui/material';
 import * as React from 'react';
 import { LinearProgress } from '@mui/material';
 import UploadIcon from '@mui/icons-material/Upload';
@@ -47,6 +47,9 @@ const AddPicture = () => {
                     case 'storage/unknown':
                         // Unknown error occurred, inspect error.serverResponse
                         break;
+
+                    default:
+                        break;
                 }
             },
             () => {
@@ -77,7 +80,7 @@ const AddPicture = () => {
 
     return (
         <div>
-            <Container maxWidth='lg'  sx={{paddingTop: '70px'}}>
+            <Container maxWidth='lg' sx={{ paddingTop: '70px' }}>
                 <Typography variant='h3' align='center'>
                     Add Picture
                 </Typography>

@@ -27,10 +27,19 @@ export default function Blog() {
   }, []);
 
   return (
-    <Container maxWidth='lg' style={{ marginTop: '30px', marginBottom: '15px' }}>
-      <Typography variant='h4' align='center' style={{ color: '#333333' }} marginBottom='25px'>
+    <Container maxWidth='lg' style={{ padding: '30px' }}>
+      <Typography variant='h4' align='center' style={{ color: '#551b10', fontWeight: 'bold' }} marginBottom='25px'>
         Our Blog
       </Typography>
+      <Container maxWidth='sm'>
+        <Typography variant='subtitle1' align='center' sx={{ fontStyle: 'italic' }}>
+          Please note that the views shared do not necessarily
+          represent the views of the organisation, but those of
+          our network of writers. To get your article published,
+          get in touch with us
+        </Typography>
+        <br />
+      </Container>
       <br />
       <br />
 
@@ -45,7 +54,7 @@ export default function Blog() {
                 alt={article.title}
               />
               <CardContent>
-                <Typography  variant="h6" component="div">
+                <Typography variant="h6" component="div">
                   {article.title}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
