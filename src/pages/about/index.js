@@ -1,6 +1,7 @@
 import React from 'react';
 import { Parallax } from 'react-parallax';
 import { Typography, Container, Grid, Card, CardMedia } from '@mui/material';
+import { Helmet } from 'react-helmet-async';
 
 import about1 from '../../assets/about/1.jpg';
 import about2 from '../../assets/about/2.jpg';
@@ -11,6 +12,10 @@ import about5 from '../../assets/about/5.jpg';
 function About() {
   return (
     <div style={{ backgroundColor: '#fafafa' }}>
+      <Helmet>
+        <title>About Us | Abangane</title>
+        <meta name='description' content='Abangane Platforms. Mental Health Champions' />
+      </Helmet>
       <Grid container justifyContent='center' sx={{ paddingTop: '40px', paddingBottom: '30px' }}>
         <Grid item lg={6} md={6} sm={12} xs={12}>
           <Card height='330px' sx={{ backgroundColor: 'transparent', boxShadow: 'none', paddingRight: '30px' }}>

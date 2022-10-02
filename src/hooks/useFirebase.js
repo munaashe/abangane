@@ -1,18 +1,17 @@
 import { useEffect, useState } from "react";
 import {
-    getAuth,
     signInWithPopup,
     GoogleAuthProvider,
     onAuthStateChanged,
     signOut,
 } from "firebase/auth";
+import { auth } from '../config/firebaseConfig';
 
 
 const useFirebase = () => {
     const [user, setUser] = useState({});
     const [error, setError] = useState("");
 
-    const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
 
     const signInUsingGoogle = () => {

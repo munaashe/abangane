@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Typography from '@mui/material/Typography';
+import { Helmet } from 'react-helmet-async';
 
 import { Container, Card, CardMedia, CardContent, Button, Grid, CardActions } from '@mui/material';
 import { Link } from 'react-router-dom'
@@ -28,6 +29,10 @@ export default function Blog() {
 
   return (
     <Container maxWidth='lg' style={{ padding: '30px' }}>
+      <Helmet>
+        <title>Our Blog | Abangane</title>
+        <meta name='description' content='Abangane Platforms. Mental Health Champions' />
+      </Helmet>
       <Typography variant='h4' align='center' style={{ color: '#551b10', fontWeight: 'bold' }} marginBottom='25px'>
         Our Blog
       </Typography>

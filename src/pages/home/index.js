@@ -38,7 +38,7 @@ function Home() {
                     </div>
                 </div>
             </Parallax>
-            <Container maxWidth='md' style={{ marginTop: '30px' }} justifyContent='center'>
+            <Container maxWidth='md' style={{ marginTop: '30px' }}>
                 <Typography style={{ color: '#551b10', fontWeight: 'bold' }} variant='h4' align='center'>
                     Bangane Bethu
                 </Typography>

@@ -1,34 +1,38 @@
 import React, { useState } from 'react';
-import { Grid, TextField, Button, Card, CardContent } from '@mui/material';
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { Grid, TextField, Button, Card, CardContent, Box, Typography } from '@mui/material';
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
+
+import { auth } from '../../config/firebaseConfig';
 
 
 const Login = () => {
     const [error, setError] = useState(false);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [loader, setLoader] = useState(false);
 
     const navigate = useNavigate();
 
-    const handleLogin = (e) => {
+    const handleLogin = async (e) => {
         e.preventDefault();
-        const auth = getAuth();
-        signInWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-                // Signed in 
-                navigate('/umngane/')
-            })
-            .catch((error) => {
-                setError(true)
-            });
+        setLoader(true);
 
+        try {
+            await signInWithEmailAndPassword(auth, email, password);
+            navigate("/umngane");
+        } catch (error) {
+            console.log(error);
+        }
     };
 
     return (
-        <div style={{ height: '50vh', alignItems: 'center', justifyContent: 'center' }}>
-            <Grid>
-                <Card style={{ maxWidth: 450, padding: '20px 5px', margin: '50px auto', backgroundColor: '#e1e1e1' }}>
+        <div style={{ height: '50vh', alignItems: 'center', justifyContent: 'center', paddingTop: '100px' }}>
+            <Typography variant='h4' align='center' sx={{ color: '#551b10', fontWeight: 'bold' }}>
+                Login
+            </Typography>
+            <Grid container justifyContent='center'>
+                <Card style={{ maxWidth: 450, boxShadow: 'none' }}>
                     <CardContent>
                         {error && <span style={{ marginTop: '15px', color: 'red', fontSize: '20px' }}>Incorrect email/password! </span>}
                         <form onSubmit={handleLogin}>
@@ -57,18 +61,21 @@ const Login = () => {
                                         onChange={e => setPassword(e.target.value)}
                                     />
                                 </Grid>
-
-                                <Button type='submit'
-                                    variant='contained'
-                                    style={{
-                                        backgroundColor: '#333333',
-                                        color: '#e1e1e1',
-                                        fontSize: '14px',
-                                        borderRadius: 10,
-                                    }}
-                                >
-                                    Login
-                                </Button>
+                                <Grid item xs={12}>
+                                    <Box textAlign='center'>
+                                        <Button type='submit'
+                                            variant='contained'
+                                            style={{
+                                                backgroundColor: loader ? '#f36a11' : '#551b10',
+                                                color: '#e1e1e1',
+                                                fontSize: '14px',
+                                                borderRadius: 10,
+                                            }}
+                                        >
+                                            Login
+                                        </Button>
+                                    </Box>
+                                </Grid>
                                 <br />
                             </Grid>
                         </form>

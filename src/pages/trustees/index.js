@@ -2,6 +2,7 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import { CardContent, CardMedia, Typography, Container, Grid } from '@mui/material';
+import { Helmet } from 'react-helmet-async';
 
 import background from '../../assets/background.jpg';
 import allan from '../../assets/trustees/allan.jpg';
@@ -14,6 +15,10 @@ export default function Trustees() {
 
   return (
     <div style={{ marginTop: '-90px', backgroundImage: `url(${background})` }}>
+      <Helmet>
+        <title>Trustees | Abangane</title>
+        <meta name='description' content='Abangane Platforms. Mental Health Champions' />
+      </Helmet>
       <Typography variant='h3' align='center' sx={{ marginBottom: '20px', paddingTop: '120px', color: '#551b10', fontWeight: 'bold' }} >
         Abangane Trustees
       </Typography>

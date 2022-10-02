@@ -1,9 +1,10 @@
 import { doc, onSnapshot } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import './article.css'
 import { db } from '../../config/firebaseConfig';
-import { Container, Card, CardContent, Typography, Box } from '@mui/material';
+import { Container, Typography } from '@mui/material';
 
 export default function Article() {
   const { id } = useParams();
@@ -19,6 +20,10 @@ export default function Article() {
 
   return (
     <div style={{ marginTop: '30px' }}>
+      <Helmet>
+        <title>{article.title}</title>
+        <meta name='description' content={article.abstract} />
+      </Helmet>
       <Container maxWidth='md' style={{ backgroundColor: '#fff' }}>
 
         <Typography gutterBottom variant='h4' sx={{ fontWeight: 'bold', color: '#551b10' }} component='div'>
